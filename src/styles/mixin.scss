@@ -1,16 +1,3 @@
-// mediaquery
-@mixin mq($vp) {
-  @media (max-width: ($vp)) {
-    @content;
-  }
-}
-
-@mixin mqh($vph) {
-  @media screen and (max-height: ($vph)) {
-    @content;
-  }
-}
-
 // element
 @mixin button-default($buttonColor) {
   display: block;

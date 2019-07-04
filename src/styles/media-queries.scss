@@ -1,15 +1,18 @@
-$mq-lg: 1280px;
-$mq-md: 960px;
-$mq-sp: 768px;
+$vp-intro-content: 1279px;
+$vp-intro-inner: 960px; // innerコンテナの幅
+$vp-intro-movie: 800px; // メインイメージの最大幅
+$vp-changeNavi: 720px; // ナビをハンバーガーに格納
+$vp-intro-chat: 420px; // チャット部品が破綻するサイズ
+$vp-s: 640px;
 
-@mixin mq-md {
-  @media screen and (max-width: $mq-md) {
+@mixin mq($vp) {
+  @media (max-width: ($vp)) {
     @content;
   }
 }
 
-@mixin mq-sp {
-  @media screen and (max-width: $mq-sp) {
+@mixin mqh($vph) {
+  @media screen and (max-height: ($vph)) {
     @content;
   }
 }
