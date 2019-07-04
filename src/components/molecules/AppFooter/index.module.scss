@@ -1,0 +1,120 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/media-queries.scss';
+@import '../../../styles/mixin.scss';
+@import '../../../styles/layout.scss';
+
+.footer {
+  padding: 80px 0 24px;
+  background-color: $color-grayBackground;
+
+  @include mq($vp-s) {
+    padding: 80px 0 12px;
+  }
+}
+
+.inner {
+  @include layout-maxContent;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+
+  @include mq($vp-s) {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.logo {
+  flex-shrink: 0;
+  @include image-replacement(114px, 30px, '../../../../content/assets/wis-logo-main-green.png', 0, 0);
+  background-size: 114px 30px;
+  margin-bottom: 16px;
+
+  @include mq($vp-s) {
+    order: 1;
+    width: 144px;
+    height: 38px;
+    margin: 0 auto 60px;
+    background-size: 144px 38px;
+  }
+}
+
+.contact {
+  flex-grow: 1;
+  width: calc(100% - 114px);
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: $color-grayText;
+  text-align: right;
+
+  @include mq($vp-s) {
+    order: 3;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.contactLink {
+  color: $color-grayText;
+
+  &:hover {
+    color: $color-grayText;
+    text-decoration: underline;
+  }
+}
+
+.copy {
+  font-size: 1rem;
+  color: $color-grayText;
+
+  @include mq($vp-s) {
+    order: 4;
+    font-size: 1rem;
+  }
+}
+
+.navi {
+  display: flex;
+  margin-left: auto;
+
+  @include mq($vp-s) {
+    order: 2;
+    flex-direction: column;
+    margin-bottom: 42px;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+.naviItem {
+  font-size: 1rem;
+
+  &:not(:last-child) {
+    margin-right: 16px;
+    padding-right: 16px;
+    border-right: 1px solid $color-grayText;
+
+
+    @include mq($vp-s) {
+      margin-right: 0;
+      padding-right: 0;
+      margin-bottom: 24px;
+      border-right: none;
+    }
+  }
+}
+
+.naviLink {
+  font-size: 1rem;
+  color: $color-grayText;
+  cursor: pointer;
+
+  @include mq($vp-s) {
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    color: $color-grayText;
+    text-decoration: underline;
+  }
+}
