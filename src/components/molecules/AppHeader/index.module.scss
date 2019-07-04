@@ -1,0 +1,370 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/media-queries.scss';
+@import '../../../styles/mixin.scss';
+@import '../../../styles/layout.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 80px;
+  padding: 18px 0;
+
+  @include mq($vp-s) {
+    height: 56px;
+    padding: 12px 0;
+  }
+
+  // &.is-fixed {
+  //   background-color: #fff;
+  //   box-shadow: $shadow-petit;
+  // }
+}
+
+.inner {
+  @include layout-maxContent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+
+  @include mq($vp-s) {
+    height: 32px;
+  }
+}
+
+.logo {
+  flex-shrink: 0;
+  width: 147px;
+  height: 32px;
+  margin-right: 32px;
+  border-bottom: none;
+
+  @include mq($vp-changeNavi) {
+    width:135px;
+    margin-right: 0;
+  }
+
+  @include mq($vp-s) {
+    width: 104px;
+    height: 24px;
+  }
+}
+
+.logoLink {
+  @include image-replacement(147px, 32px, '../../../../content/assets/lp-header-logo.png', right, center);
+  display: block;
+  background-size: 91px 24px;
+
+  @include mq($vp-changeNavi) {
+    width:135px;
+  }
+
+  @include mq($vp-s) {
+    width: 104px;
+    height: 24px;
+    background-size: 68px 18px;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    @include image-replacement(32px, 32px, '../../../../content/assets/lp-header-icon.png', left, center);
+    background-size: 32px 32px;
+
+
+    @include mq($vp-s) {
+      width: 24px;
+      height: 24px;
+      background-size: 24px 24px;
+    }
+  }
+}
+
+.nav {
+  flex-grow: 1;
+  padding-right: 32px;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+
+  @include mq($vp-changeNavi) {
+    flex-grow: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: $color-darkGrayBackground url('../../../../content/assets/lp-nav-logo.png') no-repeat 16px 24px / 135px 32px;
+    border: none;
+    transform: translateX(100%);
+    transition: .3s;
+
+    // &.is-showMenu {
+    //   transform: translateX(0);
+    // }
+  }
+
+  @include mq($vp-s) {
+    background-image: url('../../../../content/assets/lp-nav-logo.png');
+    background-position: 16px 16px;
+    background-size: 104px 24px;
+  }
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+
+  @include mq($vp-changeNavi) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-top: 80px;
+    overflow-y: scroll;
+  }
+
+  @include mq($vp-s) {
+    padding-top: 56px;
+  }
+}
+
+.navItem,
+.navItemTrial,
+.navItemLogin {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 44px;
+  cursor: pointer;
+
+  @include mq($vp-changeNavi) {
+    margin: 0 16px;
+    border-bottom: 1px solid $color-border;
+  }
+
+  & + & {
+    margin-left: 32px;
+
+    @include mq($vp-changeNavi) {
+      margin-left: 16px;
+    }
+  }
+}
+
+.navItemTrial {
+  display: none;
+
+  @include mq($vp-changeNavi) {
+    display: block;
+    padding: 10px 0 32px;
+  }
+}
+
+.navItemLogin {
+  display: none;
+
+  @include mq($vp-changeNavi) {
+    display: block;
+    border: none;
+  }
+}
+
+.navButton {
+  width: 100%;
+  margin: 0 auto;
+
+  & + & {
+    margin-top: 16px;
+  }
+}
+
+.navButtonTrialDemonstration {
+  @include button-default($color-sub);
+}
+
+.navButtonTrialDocument {
+  @include button-default($color-base);
+}
+
+.navSubMenu {
+  display: none;
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  width: 188px;
+  margin-left: -94px;
+  padding: 7px 0;
+  background-color: $color-darkGrayBackground;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px $color-darkShadow;
+
+
+  @include mq($vp-changeNavi) {
+    display: block;
+    position: static;
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  // &.is-showSubMenu {
+  //   display: block;
+  // }
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -5px;
+    @include image-replacement(10px, 10px, '../../../../content/assets/lp-fukidashi-arrow.png', center, top);
+    background-size: 10px 10px;
+
+    @include mq($vp-changeNavi) {
+      display: none;
+    }
+  }
+}
+
+.navSubItem {
+  line-height: 1;
+
+  @include mq($vp-changeNavi) {
+    background: url('../../../../content/assets/lp-nav-arrow.png') no-repeat right center / 24px 24px;
+  }
+
+  & + & {
+    @include mq($vp-changeNavi) {
+      border-top: 1px solid $color-border;
+    }
+  }
+}
+
+.navSubLink {
+  display: block;
+  padding: 9px 16px;
+  font-size: 1.2rem;
+  color: $color-lightText;
+
+  @include mq($vp-changeNavi) {
+    padding: 0 0 0 44px;
+    background-position: 16px center;
+    line-height: 44px;
+  }
+
+  &:hover {
+    background-color: $color-main;
+
+    @include mq($vp-changeNavi) {
+      background-color: transparent;
+    }
+  }
+}
+
+.navLink {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 44px;
+
+  @include mq($vp-changeNavi) {
+    display: block;
+    background: url('../../../../content/assets/lp-nav-arrow.png') no-repeat right center / 24px 24px;
+    color: $color-lightText;
+    border-bottom: 1px solid $color-border;
+  }
+}
+
+.textButton {
+  padding: 0 32px;
+
+  @include mq($vp-changeNavi) {
+    display: none;
+  }
+}
+
+.textButtonLogin {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 44px;
+  cursor: pointer;
+}
+
+.button {
+  width: 212px;
+
+  @include mq($vp-changeNavi) {
+    margin-right: 16px;
+    margin-left: auto;
+  }
+
+  @include mq($vp-s) {
+    width: 130px;
+    margin-right: 10px;
+  }
+}
+
+.buttonTrial {
+  @include button-default($color-main);
+}
+
+.hbButton {
+  flex-shrink: 0;
+  display: none;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+
+  @include mq($vp-changeNavi) {
+    display: block;
+
+    // &.is-showMenu {
+    //   z-index: 10;
+    // }
+  }
+}
+
+.hbButtonBar {
+  position: absolute;
+  left: 4px;
+  width: 24px;
+  height: 2px;
+  background-color: #000;
+
+  &:first-child {
+    top: 8px;
+
+    // .is-showMenu & {
+    //   top: 15px;
+    //   left: 5px;
+    //   background-color: #fff;
+    //   transform: rotate(45deg);
+    // }
+  }
+
+  &:nth-child(2) {
+    top: 15px;
+
+    // .is-showMenu & {
+    //   display: none;
+    // }
+  }
+
+  &:last-child {
+    top: 22px;
+
+    // .is-showMenu & {
+    //   top: 15px;
+    //   left: 5px;
+    //   background-color: #fff;
+    //   transform: rotate(-45deg);
+    // }
+  }
+}
