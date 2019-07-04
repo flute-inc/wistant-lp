@@ -1,0 +1,11 @@
+@mixin layout-maxContent {
+  width: calc(100% - 32px);
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+@mixin layout-content {
+  width: calc(100% - 32px);
+  max-width: 1024px;
+  margin: 0 auto;
+}
