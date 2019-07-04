@@ -45,7 +45,6 @@
   margin-bottom: 28px;
   font-size: 3.8rem;
   line-height: 1.31;
-  border-bottom: none;
 
   @include mq($vp-s) {
     font-size: 3rem;
@@ -71,10 +70,6 @@
   // 書式
   * + * {
     margin-top: 28px;
-  }
-
-  h1 {
-    border-bottom: none;
   }
 
   h2 {
