@@ -8,13 +8,14 @@ import styles from './Posts.module.scss';
 
 const PostItem = ({ node, title }) => (
   <div className={styles.item} key={node.fields.slug}>
-    <div className={styles.description}>
+    {node.frontmatter.hero && <Image className={styles.thumbnail} fixed={node.frontmatter.hero.childImageSharp.fixed} />}
+    <div className={styles.inner}>
+      {/* <DateAndTags date={node.frontmatter.date} tags={node.frontmatter.tags} /> */}
       <h3 className={styles.title}>
         <Link className={styles.link} to={node.fields.slug}>
           <span className={styles.linkText}>{title}</span>
         </Link>
       </h3>
-
       <p
         className={styles.excerpt}
         dangerouslySetInnerHTML={{
@@ -22,11 +23,11 @@ const PostItem = ({ node, title }) => (
         }}
       />
 
-      <DateAndTags date={node.frontmatter.date} tags={node.frontmatter.tags} />
-    </div>
-
-    <div className={styles.imageWrap}>
-      {node.frontmatter.hero && <Image fixed={node.frontmatter.hero.childImageSharp.fixed} />}
+      <div className={styles.more}>
+        <Link className={styles.moreLink} to={node.fields.slug}>
+          <span className={styles.moreLinkText}>記事を読む</span>
+        </Link>
+      </div>
     </div>
   </div>
 );

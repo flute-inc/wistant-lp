@@ -9,3 +9,13 @@
   max-width: 1024px;
   margin: 0 auto;
 }
+
+@mixin layout-narrowContent {
+  width: calc(100% - 32px);
+  max-width: 756px;
+  margin: 0 auto;
+
+  @include mq($vp-s) {
+    width: 100%;
+  }
+}
