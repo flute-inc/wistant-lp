@@ -6,22 +6,19 @@ import Posts from '../components/pages/Root/Posts';
 import Layout from '../components/templates/Layout';
 import LibraryHeader from '../components/molecules/LibraryHeader';
 import LibraryFinder from '../components/molecules/LibraryFinder';
+import LibraryFrame from '../components/molecules/LibraryFrame';
 
 const LibraryIndex = ({ location, data }) => (
   <Layout location={location} title={data.site.siteMetadata.title}>
     <Seo title="Index" description="なければ作ればいいじゃない" />
     <LibraryHeader />
     <LibraryFinder />
-    <div>
-      <div>Label</div>
+    <LibraryFrame label="人気の記事">
       <Posts posts={data.allMarkdownRemark.edges} />
-    </div>
-    <div>
-      <div>Label</div>
-      <div>Post</div>
-      <div>Post</div>
-      <div>Post</div>
-    </div>
+    </LibraryFrame>
+    <LibraryFrame label="最新の記事">
+      人気の記事
+    </LibraryFrame>
   </Layout>
 );
 
