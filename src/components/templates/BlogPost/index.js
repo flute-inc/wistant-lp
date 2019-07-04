@@ -36,23 +36,29 @@ const BlogPostTemplate = ({ location, data, pageContext }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title={post.frontmatter.title} description={description} />
+      <section className={styles.blogPostWrapper}>
+        <div className={styles.blogPostOuter}>
+          <div className={styles.blogPost}>
+            <Seo title={post.frontmatter.title} description={description} />
+            {post.frontmatter.hero && <Image className={styles.mainImage} fluid={post.frontmatter.hero.childImageSharp.fluid} />}
+            <div className={styles.blogPostInner}>
+              <div className={styles.tag}>Tag</div>
+              {/* <DateAndTags date={post.frontmatter.date} tags={post.frontmatter.tags} /> */}
+              <h1 className={styles.title}>{post.frontmatter.title}</h1>
+              <div className={styles.postDate}>0000.00.00</div>
+              <p className={styles.description}>{description}</p>
+              <div className={styles.article} dangerouslySetInnerHTML={{ __html: post.html }} />
+              <div className={styles.shareItems}>share</div>
+              {/* <Pager previous={previous} next={next} /> */}
+            </div>
+          </div>
 
-      <section className={styles.head}>
-        <h1 className={styles.title}>{post.frontmatter.title}</h1>
-        <p className={styles.description}>{description}</p>
-        <DateAndTags date={post.frontmatter.date} tags={post.frontmatter.tags} />
-
-        <div className={styles.hero}>
-          {post.frontmatter.hero && <Image fluid={post.frontmatter.hero.childImageSharp.fluid} />}
+          <div className={styles.blogPostInner}>
+          関連
+          ...post
+          </div>
         </div>
       </section>
-
-      <div className={styles.article} dangerouslySetInnerHTML={{ __html: post.html }} />
-
-      <Bio />
-
-      <Pager previous={previous} next={next} />
     </Layout>
   );
 };
