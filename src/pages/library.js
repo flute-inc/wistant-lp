@@ -5,12 +5,13 @@ import Seo from '../components/atoms/Seo';
 import Posts from '../components/pages/Root/Posts';
 import Layout from '../components/templates/Layout';
 import LibraryHeader from '../components/molecules/LibraryHeader';
+import LibraryFinder from '../components/molecules/LibraryFinder';
 
 const LibraryIndex = ({ location, data }) => (
   <Layout location={location} title={data.site.siteMetadata.title}>
     <Seo title="Index" description="なければ作ればいいじゃない" />
     <LibraryHeader />
-    <div>Finder</div>
+    <LibraryFinder />
     <div>
       <div>Label</div>
       <Posts posts={data.allMarkdownRemark.edges} />
