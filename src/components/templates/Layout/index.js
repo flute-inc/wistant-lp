@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 
 import AppHeader from '../../molecules/AppHeader';
+import AppFooter from '../../molecules/AppFooter';
 import styles from './index.module.scss';
 
 // const HeaderLink = ({ title }) => (
@@ -28,21 +29,21 @@ import styles from './index.module.scss';
 //   );
 // };
 
-const Footer = () => (
-  <footer className={styles.footer}>
-    <p className={styles.footerCopyright}>© 2019 by suzukalight</p>
-    <p className={styles.footerToHome}>
-      <Link to="/">suzukalight.com</Link>
-    </p>
-  </footer>
-);
+// const Footer = () => (
+//   <footer className={styles.footer}>
+//     <p className={styles.footerCopyright}>© 2019 by suzukalight</p>
+//     <p className={styles.footerToHome}>
+//       <Link to="/">suzukalight.com</Link>
+//     </p>
+//   </footer>
+// );
 
 const Layout = ({ location, title, children }) => (
   <div className={styles.root}>
     {/* <Header location={location} title={title} /> */}
     <AppHeader location={location} title={title} />
     <main>{children}</main>
-    <Footer />
+    <AppFooter />
   </div>
 );
 
