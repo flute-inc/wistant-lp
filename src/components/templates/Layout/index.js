@@ -42,7 +42,7 @@ const Layout = ({ location, title, children }) => (
   <div className={styles.root}>
     {/* <Header location={location} title={title} /> */}
     <AppHeader location={location} title={title} />
-    <main>{children}</main>
+    <main className={styles.main}>{children}</main>
     <AppFooter />
   </div>
 );
