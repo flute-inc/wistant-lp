@@ -1,0 +1,87 @@
+//
+// COLORS
+//
+$palette-main: #00c09a;
+$palette-main80: rgba(0, 192, 154, .8);
+$palette-main60: rgba(0, 192, 154, .6);
+$palette-main40: rgba(0, 192, 154, .4);
+$palette-main20: rgba(0, 192, 154, .2);
+$palette-main10: rgba(0, 192, 154, .1);
+$palette-main0: rgba(0, 192, 154, 0);
+
+$palette-sub: #4b95ff;
+$palette-sub80: rgba(75, 149, 255, .8);
+$palette-sub60: rgba(75, 149, 255, .6);
+$palette-sub40: rgba(75, 149, 255, .4);
+$palette-sub20: rgba(75, 149, 255, .2);
+$palette-sub10: rgba(75, 149, 255, .1);
+
+$palette-base: #ffbd3a;
+$palette-base80: rgba(255, 189, 58, .8);
+$palette-base60: rgba(255, 189, 58, .6);
+$palette-base40: rgba(255, 189, 58, .4);
+$palette-base20: rgba(255, 189, 58, .2);
+$palette-base10: rgba(255, 189, 58, .1);
+
+$palette-white: #fff;
+$palette-white50: rgba(255, 255, 255, .5);
+
+$palette-black: #333;
+$palette-black80: rgba(0, 0, 0, .8);
+$palette-black60: rgba(0, 0, 0, .6);
+$palette-black40: rgba(0, 0, 0, .4);
+$palette-black30: rgba(0, 0, 0, .3);
+$palette-black20: rgba(0, 0, 0, .2);
+$palette-black15: rgba(0, 0, 0, .15);
+$palette-black10: rgba(0, 0, 0, .1);
+$palette-black5: rgba(0, 0, 0, .05);
+
+$palette-darkGray: #4a4a4a;
+$palette-gray: #ddd;
+$palette-lightGray: #f6f6f6;
+$palette-whiteGray: #f2f2f2;
+$palette-transparentGray: rgba(242, 242, 242, 0);
+
+$palette-green: #84e5cf;
+$palette-limeGreen: #cfefd6;
+
+
+// color
+$color-defaultText: $palette-black;
+$color-lightText: $palette-white;
+$color-grayText: $palette-darkGray;
+$color-main: $palette-main;
+$color-sub: $palette-sub;
+$color-base: $palette-base;
+
+$color-seleck-tips: $palette-limeGreen;
+$color-seleck-interview: $palette-green;
+$color-seleck-category: $palette-gray;
+
+$color-problem-item: $palette-lightGray;
+
+// background
+$color-grayBackground: $palette-whiteGray;
+$color-darkGrayBackground: $palette-darkGray;
+
+// gradient
+$color-grayGradientStart: $palette-transparentGray;
+$color-grayGradientEnd: $palette-whiteGray;
+$color-greenGradientStart: $palette-main10;
+$color-greenGradientEnd: $palette-main0;
+
+// border
+$color-border: $palette-black10;
+
+// shadow
+$color-shadow: $palette-black15;
+$color-darkShadow: $palette-black30;
+$color-reflectShadow: $palette-white50;
+
+
+
+$shadow-petit: 0 2px 4px color-shadow;
+$shadow-petitReverse: inset 0 2px 4px color-shadow;
+$shadow-card: 0 4px 10px color-shadow;
+
+

@@ -1,69 +1,121 @@
 @import '../../../styles/media-queries.scss';
 
 .item {
-  display: flex;
-  overflow: hidden;
-  min-height: 128px;
-  margin: 1.5rem 0;
+  margin: 0 18px;
 
-  @include mq-sp() {
-    overflow: hidden;
-    min-height: auto;
-    max-height: 96px;
-    margin: 2rem 0;
+  @include mq($vp-s) {
+    margin: 0;
+  }
+
+  // 一番目の投稿
+  &:first-of-type {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: calc(100% - 36px);
+    margin-bottom: 64px;
+
+    @include mq($vp-s) {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  // 二番目以降の投稿
+  &:not(:first-of-type) {
+    width: calc(33.33333% - 36px);
+    max-width: 360px;
+    margin-bottom: 32px;
+
+    @include mq($vp-intro-movie) {
+      width: calc(50% - 36px);
+    }
+
+    @include mq($vp-s) {
+      width: 100%;
+      max-width: none;
+      margin-bottom: 64px;
+    }
   }
 }
 
-.description {
-  flex-grow: 1;
-  width: 100%;
+.thumbnail {
+  border-radius: 8px;
+
+  .item:first-of-type & {
+    order: 2;
+    width: 66%;
+    height: 289px;
+    margin-left: 36px;
+
+    @include mq($vp-intro-inner) {
+      width: calc(50% - 18px);
+      height: 222px;
+    }
+
+    @include mq($vp-s) {
+      width: 100%;
+      margin-bottom: 24px;
+      margin-left: 0;
+    }
+  }
+
+  .item:not(:first-of-type) & {
+    width: 100%;
+    height: 222px;
+    margin-bottom: 24px;
+
+    @include mq($vp-intro-inner) {
+      height: 200px;
+    }
+
+    @include mq($vp-intro-movie) {
+      height: 222px;
+    }
+  }
 }
 
-.imageWrap {
-  flex-shrink: 0;
-  width: 128px;
-  max-height: 128px;
+.inner {
+  .item:first-of-type & {
+    order: 1;
+    width: 32%;
+    max-width: 360px;
 
-  @include mq-sp() {
-    overflow: hidden;
-    width: 80px;
-    max-height: 80px;
+    @include mq($vp-intro-inner) {
+      width: calc(50% - 18px);
+      max-width: none;
+    }
+
+    @include mq($vp-s) {
+      width: 100%;
+      max-width: none;
+    }
   }
 }
 
 .title {
-  margin: 0 0 0.25rem;
-  font-size: 1.25rem;
-  line-height: 1;
+  margin-bottom: 20px;
+  font-size: 1.9rem;
+  line-height: 1.47;
 }
 
 .link {
-  box-shadow: none;
-  color: black;
 }
 
 .linkText {
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: 100%;
-
-  @include mq-sp() {
-    max-height: 1rem;
-    font-size: 1rem;
-  }
 }
 
 .excerpt {
-  margin: 0.5rem 0;
-  color: #999;
-  font-size: 0.875rem;
-  line-height: 1.33;
+  margin-bottom: 24px;
+  font-size: 1.4rem;
+  line-height: 1.42;
+}
 
-  @include mq-sp() {
-    overflow: hidden;
-    font-size: 0.75rem;
-    max-height: 2rem;
-  }
+.more {
+
+}
+
+.moreLinkText {
+  font-size: 1.4rem;
+  color: #4b95ff;
 }

@@ -1,0 +1,31 @@
+@import '../../../styles/media-queries.scss';
+@import '../../../styles/layout.scss';
+
+.libraryHeader {
+  padding: 172px 0 64px;
+}
+
+.inner {
+  @include layout-content;
+}
+
+.heading {
+  margin-bottom: 64px;
+  font-size: 3.8rem;
+  line-height: 1;
+  text-align: center;
+
+  @include mq($vp-s) {
+    font-size: 3rem;
+  }
+}
+
+.lede {
+  font-size: 2.4rem;
+  line-height: 2.33;
+  text-align: center;
+
+  @include mq($vp-s) {
+    font-size: 1.6rem;
+  }
+}
